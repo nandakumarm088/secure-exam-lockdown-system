@@ -1,0 +1,24 @@
+<!-- adminpage/pages/tabs/clients.html -->
+<div class="clients-tab-wrapper">
+  <!-- Fixed Controls -->
+  <div class="controls">
+    <div class="view-select">
+      <label for="view">View:</label>
+      <select id="view" autocomplete="off">
+        <option value="all" selected>All Clients</option>
+        <option value="labs">Labs</option>
+      </select>
+    </div>
+    <div class="buttons">
+      <button id="lockAllBtn" class="action-btn">Lock All</button>
+      <button id="unlockAllBtn" class="action-btn">Unlock All</button>
+      <button id="lockSelectedBtn" class="action-btn">Lock Selected</button>
+      <button id="unlockSelectedBtn" class="action-btn">Unlock Selected</button>
+    </div>
+  </div>
+
+  <!-- Scrollable View Container -->
+  <div id="client-view-container"></div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>

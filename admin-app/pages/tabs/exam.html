@@ -1,0 +1,69 @@
+<!-- adminApp\pages\tabs\exam.html -->
+
+<div class="admin-setting-stack">
+  <!-- Exam Link Card -->
+  <div class="card card-wide exam-link-card">
+    <h2>Set Exam Link</h2>
+    <p>This link will be pushed to all connected clients during lockdown mode.</p>
+    <div class="current-link">
+      <span class="current-link-label">Current Link:</span>
+      <span id="currentExamLink" class="current-link-url"></span>
+    </div>
+    <div class="exam-form">
+      <input type="url" id="examUrl" placeholder="Enter new exam link" />
+      <div class="form-buttons">
+        <button id="updateBtn">Update Link</button>
+        <button id="resetBtn">Clear</button>
+      </div>
+    </div>
+    <div id="exam-save-status" class="status-message"></div>
+  </div>
+
+  <!-- PIN Card -->
+  <div class="card card-wide pin-card">
+    <h2>Set Security PIN</h2>
+    <p class="pin-section-desc">
+      The PIN is required to unlock/lock student computers.<br>
+      Minimum 4 digits, cannot be too simple (e.g. "0000", "1234").
+    </p>
+    <div class="pin-form">
+  
+      <div class="input-with-toggle">
+        <input type="password" minlength="4" maxlength="10"
+              pattern="\d{4,10}" inputmode="numeric"
+              id="adminPinInput" autocomplete="off" placeholder="Enter new PIN" />
+        <button type="button" id="togglePinVisibility" class="toggle-visibility-btn">Unhide</button>
+      </div>
+
+      <div class="form-buttons pin-form-buttons">
+        <button id="updatePinBtn">Set PIN</button>
+        <button id="clearPinBtn">Clear</button>
+      </div>
+      <div id="pin-save-status" class="status-message"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals stay as before -->
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirm Link Update</h3>
+    <p>Are you sure you want to update the exam link to:</p>
+    <p id="modalNewLink" class="modal-highlight"></p>
+    <div class="modal-actions">
+      <button id="confirmYes">Yes</button>
+      <button id="confirmNo">Cancel</button>
+    </div>
+  </div>
+</div>
+<div id="pinConfirmModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirm PIN Update</h3>
+    <p>Are you sure you want to set the PIN to:</p>
+    <p id="modalNewPin" class="modal-highlight"></p>
+    <div class="modal-actions">
+      <button id="pinConfirmYes">Yes</button>
+      <button id="pinConfirmNo">Cancel</button>
+    </div>
+  </div>
+</div>

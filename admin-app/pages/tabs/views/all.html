@@ -1,0 +1,57 @@
+<!-- adminApp\pages\tabs\views\all.html -->
+<div class="all-main-container">
+  <!-- Controls + Count (Always visible, not scrolling) -->
+  <div class="client-view-wrapper">
+    <div class="all-controls" style="flex-shrink: 0; padding: 10px; background-color: #f9f9f9; border-bottom: 1px solid #ccc;">
+      <input type="text" id="clientSearch" placeholder="🔍 Search" />
+      <label for="statusFilter">Status:</label>
+      <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+        <option value="locked">Online - Locked</option>
+        <option value="unlocked">Online - Unlocked</option>
+      </select>
+      <button id="selectModeBtn" class="select-btn">Select</button>
+    </div>
+    <div id="clientCountDisplay" style="margin: 0 20px 8px; font-size: 13px; color: #555;"></div>
+  </div>
+  <!-- CLIENTS LIST (Scrollable) -->
+  <div id="clientsList" class="clients-list">
+    <!-- Clients loaded dynamically -->
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<!-- Update the modal content in all.html -->
+<div id="clientModal" class="modal hidden">
+  <div class="modal-contentt">
+    <div class="modal-header-flex">
+      <h3>Client Info</h3>
+      <div id="modalClientOnlineBadge" class="online-badge">Online</div>
+    </div>
+    <p><strong>UUID:</strong> <span id="modalClientUUID"></span></p>
+    <p><strong>ID:</strong> <span id="modalClientId"></span></p>
+    <p><strong>Hostname:</strong> <span id="modalClientHostname"></span></p>
+    <p><strong>IP:</strong> <span id="modalClientIP"></span></p>
+    <p><strong>Lab:</strong> 
+      <span id="modalClientLab"></span>
+      <button id="editLabBtn" class="edit-btn">✏️</button>
+      <div id="labSelectContainer" class="hidden">
+        <select id="labSelectDropdown"></select>
+        <button id="saveLabBtn" class="save-btn">Save</button>
+        <button id="cancelLabEditBtn" class="cancel-btn">Cancel</button>
+      </div>
+    </p>
+    <p><strong>MAC:</strong> <span id="modalClientMAC"></span></p>
+    <p><strong>Locked:</strong> <span id="modalClientLocked"></span></p>
+    <p><strong>All IPs:</strong> <span id="modalClientAllIps"></span></p>
+    <p><strong>Online:</strong> <span id="modalClientOnline"></span></p>
+    <p><strong>Last Seen:</strong> <span id="modalClientLastSeen"></span></p>
+    <div class="modal-actions">
+      <button class="lock-btn" id="modalLockBtn">Lock</button>
+      <button class="unlock-btn" id="modalUnlockBtn">Unlock</button>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+</div>

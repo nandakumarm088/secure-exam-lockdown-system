@@ -1,0 +1,31 @@
+<!-- adminApp\pages\admin-dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="header">
+    <h1>Admin Dashboard</h1>
+    <div class="user-info">
+      <span>admin (Admin)</span>
+      <button class="logout-btn">&#x21B5;</button>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="tabs">
+    <a href="#" class="tab active" data-tab="clients">Clients</a>
+  </div>
+
+  <!-- Dynamic Content Area -->
+  <div id="tab-content" class="tab-content-area"></div>
+
+  <script type="module" src="../renderer/adminDashboard.js"></script>
+</body>
+</html>

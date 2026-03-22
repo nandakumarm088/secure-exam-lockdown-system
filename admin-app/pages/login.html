@@ -1,0 +1,28 @@
+<!-- adminApp\pages\login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="../assets/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <img src="../assets/logo.png" alt="App Logo" class="logo">
+
+    <h2>Admin Login</h2>
+    
+    <input id="username" type="text" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    
+    <button id="loginBtn">Login</button>
+
+    <img id="spinner" src="../assets/spinner.gif" alt="Loading..." style="display: none;" />
+
+    <p id="status" class="status"></p>
+  </div>
+
+  <script type= "module" src="../renderer/login.js"></script>
+</body>
+</html>

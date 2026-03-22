@@ -1,0 +1,593 @@
+.admin-root {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 12px 32px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  background: #f5f7fa;
+}
+
+.admin-section {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2.5px 13px 0 rgba(40,60,90,0.10), 0 1.5px 4px rgba(0,0,0,0.04);
+  padding: 26px 26px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-add > strong {
+  font-size: 1.14rem;
+  font-weight: 600;
+  color: #263059;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.admin-section h3 {
+  font-size: 1.08rem;
+  margin: 0 0 12px 0;
+  color: #3966ee;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  letter-spacing: 0.01em;
+  color: #263059;
+}
+
+.admin-header p {
+  color: #7580a6;
+  font-size: 1.02rem;
+  margin: 0 0 10px 0;
+  letter-spacing: 0;
+}
+
+/* Add Admin Card */
+.admin-add {
+  gap: 13px;
+}
+
+
+.admin-actions input,
+.admin-actions select {
+  border: 1.2px solid #dde3ea;
+  border-radius: 7px;
+  padding: 9px 13px;
+  font-size: 1rem;
+  transition: border-color 0.19s;
+  background: #f4f6fa;
+  outline: none;
+}
+
+.admin-actions input:focus,
+.admin-actions select:focus {
+  border-color: #4778ee;
+  background: #fff;
+}
+
+.admin-actions button {
+  padding: 9px 22px;
+  background: linear-gradient(95deg,#4054ee 40%, #42a1ee 120%);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  box-shadow: 0 2px 9px rgba(64,84,238,0.09);
+  cursor: pointer;
+  transition: background 0.17s, transform 0.13s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.admin-actions button span {
+  font-weight: bold;
+  font-size: 1.15em;
+  margin-right: 2px;
+}
+.admin-actions button:hover {
+  background: linear-gradient(100deg,#3980f7 20%, #3a50ef 130%);
+  transform: translateY(-1px) scale(1.03);
+}
+
+/* Search bar styling */
+.admin-searchbar {
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.admin-searchbar input {
+  border: 1.2px solid #dde3ea;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 280px;
+  transition: border-color 0.21s;
+  background: #f4f6fa;
+}
+.admin-searchbar input:focus {
+  border-color: #4778ee;
+  background: #fff;
+}
+
+/* Status message card */
+.status-message {
+  margin-bottom: 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-size: 1rem;
+  display: none;
+  background: #f7fbfa;
+  color: #215b2a;
+  border: 1.2px solid #abdbe3;
+}
+.status-message.success { background: #ebfbee; color: #176b36; border-color: #9ed8b7; display: block; }
+.status-message.error   { background: #fff7f0; color: #c21c1c; border-color: #ffd2be; display: block; }
+
+
+/* =========== LIST GRID =========== */
+.admin-lists {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  margin-top: 2px;
+  min-height: 300px;
+  max-height: 45vh;
+  /* Make the list section scrollable, cards scroll independently on overflow */
+  overflow: hidden;
+}
+
+.admin-list-card {
+  flex: 1 1 0;
+  background: #fcfcfc;
+  border-radius: 12px;
+  box-shadow: 0 2.5px 10px 0 rgba(43,63,100,0.06);
+  padding: 0 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  /* Make inside list scrollable: */
+  min-height: 0;
+}
+
+.admin-list-heading {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 16px 20px 10px 20px;
+  background: linear-gradient(95deg,#4275ee 25%, #64b6ee 100%);
+}
+.admin-list-heading h3 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.16rem;
+  margin: 0;
+  letter-spacing: 0.03em;   /* Less spacing for ALL CAPS look, but not "too much" */
+  text-transform: uppercase;
+}
+
+
+.admin-table td {
+  color: #273759;
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+  padding: 7px 13px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.96rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.19s, color 0.15s;
+}
+.action-btn.edit {
+  background: #eaf6ff;
+  color: #237bee;
+}
+.action-btn.edit:hover {
+  background: #d3e3fc;
+  color: #1351b4;
+}
+.action-btn.delete {
+  background: #fdeff2;
+  color: #ae2850;
+}
+.action-btn.delete:hover {
+  background: #fbcccc;
+}
+.action-btn.reset {
+  background: #f5f8fa;
+  color: #3a62e8;
+}
+.action-btn.reset:hover {
+  background: #e5f0ff;
+}
+
+
+/* =========== MODAL ========== */
+.modal {
+  position: fixed; left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(47,67,139,0.13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1010;
+  transition: opacity 0.2s;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(38,44,100,0.19);
+  padding: 34px 34px 22px 34px;
+  min-width: 320px;
+  max-width: 93vw;
+  text-align: center;
+  position: relative;
+}
+.modal-content h3 {
+  margin-bottom: 6px;
+  color: #27429e;
+  font-weight: bold;
+  font-size: 1.17rem;
+}
+.modal-content p {
+  margin-bottom: 15px;
+  color: #495789;
+}
+.modal-content input[type="password"] {
+  width: 84%;
+  padding: 11px 13px;
+  border-radius: 8px;
+  border: 1.2px solid #e0e3eb;
+  margin-bottom: 20px;
+  background: #f8fbfc;
+  transition: border-color 0.17s;
+}
+.modal-content input[type="password"]:focus {
+  border-color: #4054ee;
+  background: #fff;
+}
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.modal-actions button {
+  padding: 9px 27px;
+  border-radius: 7px;
+  border: none;
+  background: #3954ee;
+  color: #fff;
+  font-size: 1.03rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.12s;
+}
+.modal-actions button:last-child {
+  background: #e7eaef; color: #283042;
+}
+.modal-actions button:hover {
+  background: #2a87fc;
+}
+
+/* Add a subtle separator between super admins/admins sections */
+.admin-section.admin-list-section:not(:first-of-type) {
+  margin-top: 0px;
+  border-top: 1px solid #f1f6ff;
+}
+
+/* Put .admin-table below, with no wrapper scroll (let tab/page scroll) */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: none;
+}
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.admin-table th {
+  background: #f1f6ff;
+  color: #3770ee;
+  font-weight: 700;
+  border-bottom: 1.5px solid #dde3ea;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.admin-table tbody tr {
+  background: #fff;
+  box-shadow: 0 1.5px 8px rgba(40,60,150,0.04);
+  transition: box-shadow 0.14s;
+}
+.admin-table tbody tr:hover {
+  box-shadow: 0 4px 18px rgba(71,120,226,0.10);
+  background: #f5faff;
+}
+.admin-table td:last-child {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 650px){
+  .admin-root { padding: 12px 3vw; }
+  .admin-section { padding: 12px 4vw; }
+  .admin-actions { flex-direction: column; gap: 6px;}
+  .admin-searchbar input { width: 99%; }
+  .admin-table th, .admin-table td { font-size: 0.92rem; padding: 7px 6px;}
+}
+
+@media (max-width: 1080px) {
+  .admin-lists {
+    flex-direction: column;
+    gap: 18px;
+    max-height: none;
+  }
+  .admin-list-card {
+    min-width: unset; max-width: unset;
+  }
+  .admin-list-table-wrapper { max-height: 260px; }
+}
+
+/* Highlight the editing row */
+tr.editing-row {
+  background: #f1f7ff !important;
+  transition: background 0.18s;
+  animation: edit-highlight-in 0.22s;
+}
+
+@keyframes edit-highlight-in {
+  0% { background-color: #f2f8ff; }
+  100% { background-color: #eaf2ff; }
+}
+
+/* Style the editable input fields */
+.edit-username, .edit-email {
+  width: 96%;
+  padding: 7px 9px;
+  border: 1.2px solid #8fb9f9;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  background: #f7faff;
+  color: #273759;
+  outline: none;
+  transition: border-color 0.17s, background 0.13s;
+}
+.edit-username:focus, .edit-email:focus {
+  border-color: #3966ee;
+  background: #fff;
+}
+
+/* Button styles for edit mode */
+.btn-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+@media (max-width: 650px){
+  .edit-username, .edit-email { font-size: 0.92rem; }
+  .btn-group { flex-direction: column; gap: 5px;}
+  .cancel-btn, .save-btn, .remove-btn, .edit-btn, .reset-btn { 
+    padding: 9px 8px; 
+    font-size: 0.9rem; 
+  }
+}
+
+/* ACTION BUTTONS - DEFAULT (Edit, Reset Password) */
+.edit-btn, .reset-btn {
+  padding: 6px 17px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.98rem;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: none;
+  transition: background 0.17s, color 0.15s, box-shadow 0.12s;
+}
+
+/* Edit (primary-blue) */
+.edit-btn {
+  background: #eaf2ff;
+  color: #3260d3;
+  border: 1.2px solid #b9d3f8;
+}
+.edit-btn:hover {
+  background: #d6e7ff;
+  color: #234899;
+  border-color: #85aeea;
+}
+
+/* Reset Password (light blue outline) */
+.reset-btn {
+  background: #f7faff;
+  color: #237bee;
+  border: 1.2px solid #b7d7fb;
+}
+.reset-btn:hover {
+  background: #eaf1ff;
+  color: #165099;
+  border-color: #87b5ec;
+}
+
+/* Edit Mode: Cancel, Save, Remove Grouped Buttons */
+
+.cancel-btn, .save-btn, .remove-btn {
+  padding: 7px 19px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.99rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.23s, color 0.16s, box-shadow 0.12s;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Cancel */
+.cancel-btn {
+  background: #f4f8ff;
+  color: #4b5a88;
+  border: 1.2px solid #cbe2ff;
+  border-radius: 5px;
+  padding: 6px 13px;
+  font-size: 0.97rem;
+}
+.cancel-btn:hover {
+  background: #e3eefc;
+  color: #223161;
+}
+
+/* Save (primary-blue) */
+.save-btn {
+  background: linear-gradient(95deg,#3d7ae6 40%, #5ca9f8 120%);
+  color: #fff;
+  border: 1.2px solid #407ee7;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 6px 13px;
+  font-size: 0.97rem;
+}
+.save-btn:hover {
+  background: linear-gradient(100deg,#3c63c5 20%, #3498db 130%);
+}
+
+/* Remove (alert) */
+.remove-btn {
+  background: #fff4ee;
+  color: #d53a1c;
+  border: 1.2px solid #febda9;
+  border-radius: 5px;
+  padding: 6px 13px;
+  font-size: 0.97rem;
+}
+.remove-btn:not(:disabled):hover {
+  background: #ffe0d6;
+  color: #ab270f;
+  border-color: #ffa07a;
+}
+.remove-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.field-error {
+  color: #b41414 !important;
+  font-size: .98em;
+  margin-left: .2em;
+  margin-top: .15em;
+  display: block;
+}
+.input-error {
+  border-color: #b41414 !important;
+  background: #fff4f4 !important;
+}
+
+.highlight-current-user {
+  background: #e7f2ff !important;
+  font-weight: 600;
+}
+
+.add-spinner {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+.add-spinner-circle {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  border-top: 2.5px solid rgba(255,255,255,0.25);
+  animation: add-spin 0.7s linear infinite;
+  box-sizing: border-box;
+}
+@keyframes add-spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.modal-content,
+.modal-content h3,
+.modal-content p {
+  text-align: center;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end; /* optional: make toasts align to right edge for stacking */
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 7px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 1.5px 3px #0003;
+  margin-top: 8px;
+  min-width: 200px;
+  max-width: 330px;
+  padding: 12px 22px;
+  opacity: 0;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translateY(25px);
+  transition:
+    opacity 0.3s cubic-bezier(.4,0,.2,1),
+    transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast .toast-icon {
+  margin-right: 10px;
+  font-size: 17px;
+}
+
+.toast.success   { background: #28a745; }
+.toast.error     { background: #dc3545; }
+.toast.info      { background: #007bff; }
+.toast.warning   { background: #ffc107; color: #222; }
+
+.toast:hover {
+  filter: brightness(0.93);
+}

@@ -1,0 +1,45 @@
+<!-- adminApp\pages\super-dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../assets/styles/superDashboard.css" />
+</head>
+<body class="dashboard-body">
+  <!-- Top Bar -->
+  <div class="header" id="main-header">
+    <h1>Admin Dashboard</h1>
+    <div class="user-info">
+      <span id="user-display"></span>
+      <button class="logout-btn">&#x21B5;</button>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="tabs" id="main-tabs">
+    <a href="#" class="tab" data-tab="clients">Clients</a>
+    <a href="#" class="tab" data-tab="exam">Set Exam Link</a>
+    <a href="#" class="tab" data-tab="admin">Admin Management</a>
+  </div>
+
+  <!-- Dynamic Content Area -->
+  <div id="tab-content" class="tab-content-area"></div>
+
+  <script type="module" src="../renderer/superDashboard.js"></script>
+
+  <div id="logout-modal">
+    <div class="modal-box" tabindex="-1">
+      <div class="modal-icon">&#9888;</div>
+      <div class="modal-message">Are you sure you want to logout?</div>
+      <div class="modal-actionss">
+        <button id="confirm-logout" class="modal-btn logout-confirm">Logout</button>
+        <button id="cancel-logout" class="modal-btn logout-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

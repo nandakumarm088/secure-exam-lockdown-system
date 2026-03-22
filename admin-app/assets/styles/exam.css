@@ -1,0 +1,358 @@
+/* adminApp\assets\styles\exam.css */
+
+/* --- Base Reset and Font --- */
+body, .admin-setting-stack, .admin-setting-stack * {
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* --- Stack Layout --- */
+.admin-setting-stack {
+  width: 97vw;
+  max-width: 900px;
+  margin: 48px auto 28px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  align-items: stretch;
+}
+
+/* --- Card (Wide) Base Styles --- */
+.card.card-wide {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  padding: 2.6rem 3.2rem 2.4rem 3.2rem;
+  border-radius: 18px;
+  border: 1.5px solid #e6e9f0;
+  box-shadow: 0 2px 22px rgba(34,46,98,0.07), 0 1.5px 5px rgba(40,80,150, .06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  transition: box-shadow 0.17s;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.exam-link-card { border-left: 6px solid #3c77e5; }
+.pin-card { border-left: 6px solid #25b495; }
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #2b4470;
+  letter-spacing: -.9px;
+  margin-bottom: .58em;
+}
+
+.exam-link-card h2 { color: #2c65bb; }
+.pin-card h2 { color: #158568; }
+
+.card p,
+.pin-section-desc {
+  font-size: 1.09rem;
+  color: #354980;
+  margin-top: 0;
+  margin-bottom: 1.08em;
+  line-height: 1.64;
+}
+.pin-section-desc {
+  color: #187a5d;
+  font-size: 1.01rem;
+}
+
+/* --- Current Link --- */
+.current-link {
+  margin-bottom: 1.1em;
+}
+.current-link-label {
+  font-weight: 700; color: #314579; margin-right: 0.44em;
+}
+.current-link-url {
+  display: inline-block;
+  background: #f0f6fa;
+  font-family: 'Menlo', 'Consolas', monospace;
+  color: #1d64a1;
+  border-radius: 5px;
+  padding: 0.15em 0.65em 0.18em 0.65em;
+  font-size: 1.04em;
+  border: 1px solid #d6e6f8;
+  word-break: break-all;
+  transition: background 0.13s;
+}
+.current-link-url:empty {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* --- Exam Link Form --- */
+.exam-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+}
+.exam-form input[type="url"] {
+  padding: 0.68em 0.91em;
+  border: 1.26px solid #bac5d6;
+  border-radius: 6px;
+  font-size: 1.09rem;
+  background: #f7fbfe;
+  outline: none;
+  transition: border-color 0.19s, box-shadow 0.17s;
+  width: 94%;
+  max-width: 460px;
+}
+.exam-form input[type="url"]:focus {
+  border-color: #4280ea;
+  background: #eff4ff;
+  box-shadow: 0 0 0 2px #b8dbfa66;
+}
+
+/* --- PIN Form --- */
+.pin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-bottom: 0.1em;
+}
+.pin-form input[type="password"],
+.pin-form input[type="text"] {
+  padding: 0.68em 0.75em;
+  border: 1.3px solid #b3b7c9;
+  border-radius: 6px;
+  font-size: 1.04rem;
+  background: #f2fcf9;
+  color: #2b354a;
+  outline: none;
+  width: 94%;
+  max-width: 460px;
+  letter-spacing: normal;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pin-form input[type="password"]:focus,
+.pin-form input[type="text"]:focus {
+  border-color: #37d18e;
+  background: #edfaf3;
+  box-shadow: 0 0 0 2px #8efbd08b;
+}
+
+.pin-form input[type="password"]::placeholder,
+.pin-form input[type="text"]::placeholder {
+  color: #9ca3af;
+  letter-spacing: normal;
+}
+
+/* --- Shared Button Styles --- */
+.form-buttons, .pin-form-buttons {
+  display: flex;
+  gap: 0.9em;
+  margin-top: 0.22em;
+  flex-wrap: wrap;
+}
+.form-buttons button, .pin-form-buttons button {
+  padding: 0.61em 1.6em;
+  font-size: 1.05rem;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(93deg, #4089f3 17%, #234d89 120%);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.16s, box-shadow 0.16s;
+  box-shadow: 0 2px 8px rgba(90,115,200,0.085);
+}
+.form-buttons button#resetBtn, .pin-form-buttons button#clearPinBtn {
+  background: #eaeaea;
+  color: #336774;
+  box-shadow: none;
+  border: 1.4px solid #dbe6f0;
+}
+.form-buttons button:active, .pin-form-buttons button:active,
+.form-buttons button:focus-visible, .pin-form-buttons button:focus-visible {
+  outline: 2px solid #2c7fc2;
+  box-shadow: 0 2px 8px rgba(35,80,170,0.11);
+}
+.form-buttons button#updateBtn:hover, .pin-form-buttons button#updatePinBtn:hover,
+.form-buttons button#updateBtn:focus-visible, .pin-form-buttons button#updatePinBtn:focus-visible {
+  background: linear-gradient(85deg, #217ae0 27%, #285ba9 120%);
+}
+.pin-form-buttons button#updatePinBtn {
+  background: linear-gradient(93deg, #20c48c 23%, #158568 120%);
+}
+.pin-form-buttons button#updatePinBtn:hover, .pin-form-buttons button#updatePinBtn:focus-visible {
+  background: linear-gradient(82deg, #15a062 42%, #19774d 120%);
+}
+.pin-form-buttons button#clearPinBtn {
+  background: #eef8f3;
+  color: #12734d;
+  border: 1.2px solid #b5e7d9;
+}
+
+/* --- Status Messages --- */
+.status-message {
+  min-height: 1.2em;
+  margin-top: 0.65em;
+  font-size: 1.08em;
+  color: #35787d;
+  text-align: center;
+  transition: color 0.11s;
+}
+.status-message.error, .status-message[error="true"] {
+  color: #d23b3b;
+}
+.status-message.success, .status-message[success="true"] {
+  color: #217c16;
+  font-weight: 500;
+}
+
+/* --- Modal Styles --- */
+.modal {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  align-items: center; justify-content: center;
+  background: rgba(22,36,66,0.14);
+  z-index: 1200;
+  pointer-events: all;
+  opacity: 1;
+  transition: opacity 0.21s;
+}
+.modal.hidden {
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 7px 32px 1px #305ccb36;
+  padding: 2.05em 1.8em 1.65em 1.8em;
+  min-width: 270px;
+  max-width: 95vw;
+  text-align: center;
+  animation: modalIn 0.15s cubic-bezier(.8,-0.5,.7,1.5);
+}
+@keyframes modalIn {
+  from { transform: scale(.92) translateY(12px); opacity:0; }
+  to   { transform: scale(1) translateY(0); opacity:1; }
+}
+.modal-content h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #2857a4;
+  margin: 0 0 0.6em;
+}
+.modal-content p {
+  font-size: 1.03em;
+  margin: 0.2em 0;
+}
+.modal-highlight {
+  font-family: 'Menlo', 'Consolas', monospace;
+  color: #0d4067;
+  font-size: 1.1em;
+  background: #eef5ff;
+  padding: 0.33em .65em;
+  word-break: break-all;
+  border-radius: 4px;
+  display: block;
+  margin: 0.72em 0 0.58em 0;
+}
+#pinConfirmModal .modal-content h3 { font-size: 1.13rem; }
+#pinConfirmModal .modal-highlight { letter-spacing: 0.23em; }
+.modal-actions {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1.3em;
+}
+.modal-actions button {
+  min-width: 70px;
+  background: #5e99f7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.52em 1.1em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.17s;
+}
+.modal-actions button#confirmNo, .modal-actions button#pinConfirmNo {
+  background: #e8e8e8;
+  color: #23428d;
+  border: 1.2px solid #bed6f2;
+}
+.modal-actions button#confirmYes:hover,
+.modal-actions button#confirmYes:focus-visible,
+.modal-actions button#pinConfirmYes:hover,
+.modal-actions button#pinConfirmYes:focus-visible {
+  background: #2c65bb;
+}
+.modal-actions button#confirmNo:hover,
+.modal-actions button#confirmNo:focus-visible,
+.modal-actions button#pinConfirmNo:hover,
+.modal-actions button#pinConfirmNo:focus-visible {
+  background: #e1e8ef;
+  color: #20436b;
+}
+
+
+/* ---- Responsive tweaks: Stack cards, fit small screens --- */
+@media (max-width: 1050px) {
+  .admin-setting-stack {
+    max-width: 99vw;
+    gap: 21px;
+    margin-top: 22px;
+  }
+  .card.card-wide {
+    padding: 1.35rem 0.8rem 1.3rem 0.8rem;
+  }
+  .exam-form input[type="url"],
+  .pin-form input[type="password"] {
+    width: 99%;
+    font-size: 1.04rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-setting-stack { margin-top: 9px; gap: 14px; }
+  .card.card-wide { border-radius: 10px; padding: 1.1rem 0.3rem 1.1rem 0.3rem; }
+  .current-link { font-size: 0.97rem; padding: 0.2em 0.12em; }
+}
+
+.input-with-toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 94%;
+  max-width: 460px;
+}
+.input-with-toggle input[type="password"],
+.input-with-toggle input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  margin-right: 0.5em;
+}
+.toggle-visibility-btn {
+  background: #e9eef4;
+  color: #234a66;
+  border: 1px solid #bdd1ea;
+  border-radius: 5px;
+  font-size: 0.98em;
+  padding: 0.35em 1.15em;
+  margin-left: 6px;
+  min-width: 67px;
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s;
+}
+.toggle-visibility-btn:hover {
+  background: #d1e3fa;
+  color: #27509f;
+}

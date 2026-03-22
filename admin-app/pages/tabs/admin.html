@@ -1,0 +1,79 @@
+<!-- adminApp\pages\tabs\admin.html -->
+
+<div class="admin-root">
+  <div class="admin-header">
+    <h2>Admin Management</h2>
+    <p>Only Super Admins can add/remove admins, send reset links, and edit user data.</p>
+  </div>
+
+  <div class="admin-section admin-add">
+    <strong>Add Admin</strong>
+    <div class="admin-actions">
+      <input type="text" id="adminUsername" placeholder="Username" autocomplete="off" />
+      <input type="email" id="adminEmail" placeholder="Email" autocomplete="off" />
+      <select id="adminRole">
+        <option value="" disabled selected>Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="super_admin">Super Admin</option>
+      </select>
+      <button id="addAdminBtn" type="button">
+        <span class="add-label">+</span> Add
+        <span class="add-spinner" style="display:none;margin-left:8px;">
+          <span class="add-spinner-circle"></span>
+        </span>
+      </button>
+      <button id="resetAdminFormBtn" type="button">Reset</button>
+    </div>
+    <div id="addAdminError" class="field-error" style="display:none"></div>
+  </div>
+
+  <div class="admin-section admin-searchbar">
+    <input type="text" id="adminSearch" placeholder="Search by username or email..." />
+  </div>
+
+  <div id="admin-status" class="status-message"></div>
+
+  <div class="admin-section admin-list-section">
+    <h3>Super Admins</h3>
+    <table class="admin-table" id="superAdminTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th style="text-align:center">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="admin-section admin-list-section">
+    <h3>Admins</h3>
+    <table class="admin-table" id="adminTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th style="text-align:center">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Password Modal -->
+<div id="resetModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirm Password</h3>
+    <p>Enter your password to confirm action.</p>
+    <input type="password" id="superPassword" placeholder="Your password" />
+    <div class="modal-actions">
+      <button id="confirmResetBtn">Confirm</button>
+      <button id="cancelResetBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Notification (bottom centered) -->
+<div class="toast-container" id="toastContainer"></div>
