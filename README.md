@@ -59,3 +59,11 @@ All source code and system architecture are available.
 - Stronger authentication
 - Encryption for WebSocket communication
 - Better tamper resistance
+
+---
+
+## 🔐 Security Considerations
+
+- Client-server communication relies on WebSocket and may be vulnerable without authentication hardening  
+- Client-side restrictions can potentially be bypassed if system-level controls are not enforced properly  
+- Future improvements include secure authentication, encrypted communication, and tamper detection
