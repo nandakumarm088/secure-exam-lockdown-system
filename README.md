@@ -67,3 +67,18 @@ All source code and system architecture are available.
 - Client-server communication relies on WebSocket and may be vulnerable without authentication hardening  
 - Client-side restrictions can potentially be bypassed if system-level controls are not enforced properly  
 - Future improvements include secure authentication, encrypted communication, and tamper detection
+
+---
+
+## 📸 Screenshots
+
+![Setup](docs/01-client-setup.png)
+![Exam](docs/02-client-exam.png)
+![Overlay](docs/03-client-overlay.png)
+![Locked](docs/04-client-locked.png)
+![Login](docs/05-admin-login.png)
+![Dashboard](docs/06-admin-dashboard.png)
+![Client Modal](docs/07-admin-client-modal.png)
+![Exam Link](docs/08-admin-exam-link.png)
+![PIN](docs/09-admin-pin.png)
+![Control Panel](docs/10-admin-control-panel.png)
