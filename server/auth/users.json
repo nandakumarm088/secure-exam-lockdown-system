@@ -1,0 +1,14 @@
+[
+  {
+    "username": "superadmin",
+    "email": "superadmin@example.com",
+    "password": "$2b$10$9zFneRxpiXZoqP4Y1lgfWuGyKe9DDjelDt8rG.XdFvncPNOHZOE.m",
+    "role": "super_admin"
+  },
+  {
+    "username": "admin",
+    "email": "admin@example.com",
+    "password": "$2b$10$BgrlAvTUvtnkrNrIUEga3uGsBAwF4F2m5S7XYvc8KEoSUo1xykmaO",
+    "role": "admin"
+  }
+]
